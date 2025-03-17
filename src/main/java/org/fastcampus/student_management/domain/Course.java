@@ -46,4 +46,9 @@ public class Course {
   public Long getCourseTime() {
     return courseTime;
   }
+
+  public boolean isSameStudentName(String studentName) {
+    return this.getStudentName().equals(studentName);
+  }
+
 }

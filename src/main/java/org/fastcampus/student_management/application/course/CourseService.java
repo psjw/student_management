@@ -2,6 +2,7 @@ package org.fastcampus.student_management.application.course;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.fastcampus.student_management.application.course.dto.CourseInfoDto;
 import org.fastcampus.student_management.application.student.StudentService;
 import org.fastcampus.student_management.domain.Course;
@@ -26,10 +27,24 @@ public class CourseService {
 
   public List<CourseInfoDto> getCourseDayOfWeek(DayOfWeek dayOfWeek) {
     // TODO: 과제 구현 부분
-    return new ArrayList<>();
+    List<Course> courseDayOfWeeks = courseRepository.getCourseDayOfWeek(dayOfWeek);
+    if(courseDayOfWeeks.isEmpty()){
+      throw new RuntimeException("요텅하신 날짜에 해당하는 수업이 없습니다.");
+    }
+    return courseDayOfWeeks.stream().map(CourseInfoDto::new)
+            .collect(Collectors.toList());
   }
 
   public void changeFee(String studentName, int fee) {
     // TODO: 과제 구현 부분
+    Student student = studentService.getStudent(studentName);
+    List<Course> coursesByStudent = courseRepository.getCourseListByStudent(studentName);
+    List<Course> changeCoursesByStudent = coursesByStudent.stream()
+            .map(course -> new Course(student, course.getCourseName(), fee, course.getDayOfWeek(),
+                    course.getCourseTime()))
+            .toList();
+
+    courseRepository.saveCourses(changeCoursesByStudent);
+
   }
 }

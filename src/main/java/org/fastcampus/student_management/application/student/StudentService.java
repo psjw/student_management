@@ -24,9 +24,19 @@ public class StudentService {
 
   public void activateStudent(String name) {
     // TODO: 과제 구현 부분
+    Student student = getStudent(name);
+    if(student.isActivate()){
+      throw new IllegalArgumentException("활성화된 학생입니다.");
+    }
+    student.isChangeActivate(true);
   }
 
   public void deactivateStudent(String name) {
     // TODO: 과제 구현 부분
+    Student student = getStudent(name);
+    if(student.isActivate()){
+      throw new IllegalArgumentException("비활성화된 학생입니다.");
+    }
+    student.isChangeActivate(false);
   }
 }
