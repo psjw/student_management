@@ -33,7 +33,17 @@ public class Student {
     return activated;
   }
 
-  public void isChangeActivate(boolean activated) {
-    this.activated = activated;
+  public void activate(){
+    if(this.activated){
+      throw new IllegalArgumentException();
+    }
+    this.activated = true;
+  }
+
+  public void deactivate(){
+    if(!this.activated){
+      throw new IllegalArgumentException();
+    }
+    this.activated = false;
   }
 }
