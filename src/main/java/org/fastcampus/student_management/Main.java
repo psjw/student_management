@@ -23,7 +23,7 @@ public class Main {
         CourseCommandRepository courseCommandRepository = new CourseCommandRepositoryImpl();
 
         StudentService studentService = new StudentService(studentRepository);
-        CourseService courseService = new CourseService(courseCommandRepository, courseQueryRepository, studentService);
+        CourseService courseService = new CourseService(courseCommandRepository, courseQueryRepository, studentRepository);
 
         CoursePresenter coursePresenter = new CoursePresenter();
         StudentPresenter studentPresenter = new StudentPresenter();
