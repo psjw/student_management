@@ -1,15 +1,16 @@
 package org.fastcampus.student_management.repo;
 
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.fastcampus.student_management.application.course.interfaces.CourseCommandRepository;
+import org.fastcampus.student_management.application.course.dto.CourseInfoDto;
 import org.fastcampus.student_management.domain.Course;
 import org.fastcampus.student_management.domain.DayOfWeek;
 
-public class CourseCommandRepositoryImpl implements CourseCommandRepository {
+public class CourseRepository {
 
     private final Map<String, Course> courseMap = new HashMap<>();
 
