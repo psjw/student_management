@@ -2,7 +2,7 @@ package org.fastcampus.student_management.application.course;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import org.fastcampus.student_management.application.course.dto.CourseInfoDto;
+import org.fastcampus.student_management.domain.dto.CourseInfoDto;
 import org.fastcampus.student_management.application.course.interfaces.CourseCommandRepository;
 import org.fastcampus.student_management.application.course.interfaces.CourseQueryRepository;
 import org.fastcampus.student_management.domain.CourseList;

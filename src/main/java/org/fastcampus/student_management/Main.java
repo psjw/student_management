@@ -1,7 +1,7 @@
 package org.fastcampus.student_management;
 
 import org.fastcampus.student_management.application.course.CourseService;
-import org.fastcampus.student_management.application.course.dto.CourseInfoDto;
+import org.fastcampus.student_management.domain.dto.CourseInfoDto;
 import org.fastcampus.student_management.application.course.interfaces.CourseCommandRepository;
 import org.fastcampus.student_management.application.course.interfaces.CourseQueryRepository;
 import org.fastcampus.student_management.application.student.StudentService;
